@@ -1,5 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:todo_app_sqlite_freezed/models/todo_model.dart';
+import 'package:path/path.dart';
 
 class DatabaseHelper {
   final _dbName = 'todoApp.db';
@@ -34,20 +35,20 @@ class DatabaseHelper {
 // Insert a new task
   Future<int> insert(Todo todo) async {
     Database db = await instance.database;
-    return await db.insert(_tableName, todo.toMap());
+    return await db.insert(_tableName, todo.toJson());
   }
 
 // Get all tasks
   Future<List<Todo>> getAllTodos() async {
     Database db = await instance.database;
     var todos = await db.query(_tableName);
-    return todos.map((e) => Todo.fromMap(e)).toList();
+    return todos.map((e) => Todo.fromJson(e)).toList();
   }
 
 // Update a task
   Future<int> update(Todo todo) async {
     Database db = await instance.database;
-    return await db.update(_tableName, todo.toMap(),
+    return await db.update(_tableName, todo.toJson(),
         where: 'id = ?', whereArgs: [todo.id]);
   }
 
