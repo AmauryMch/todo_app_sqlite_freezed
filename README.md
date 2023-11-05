@@ -4,7 +4,7 @@ Instructions pour exécuter l'application Flutter avec un émulateur Android Stu
 - Ouvrir le projet dans VSCode
 
 Pour lancer l'émulateur Android Studio :
-- Ouvrer Android Studio.
+- Ouvrir Android Studio.
 - Cliquer sur "Configure" en bas à droite.
 - Sélectionner "AVD Manager" (Android Virtual Device Manager).
 - Créer un nouvel émulateur Android en suivant les étapes guidées. Si vous avez déjà un émulateur configuré, vous pouvez le lancer à partir d'ici.
