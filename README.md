@@ -1,16 +1,14 @@
-# todo_app_sqlite_freezed
+Instructions pour exécuter l'application Flutter avec un émulateur Android Studio
 
-A new Flutter project.
+- Installer Flutter et Android Studio
+- Ouvrir le projet dans VSCode
 
-## Getting Started
+Pour lancer l'émulateur Android Studio :
+- Ouvrer Android Studio.
+- Cliquer sur "Configure" en bas à droite.
+- Sélectionner "AVD Manager" (Android Virtual Device Manager).
+- Créer un nouvel émulateur Android en suivant les étapes guidées. Si vous avez déjà un émulateur configuré, vous pouvez le lancer à partir d'ici.
+- Ou depuis VSCode en sélectionnant l'émulateur en bas à droite.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Pour vérifier les dépendances :
+- Vous pouvez exécuter la commande suivante dans le terminal de VSCode : ```flutter pub get```
