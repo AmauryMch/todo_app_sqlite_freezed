@@ -99,7 +99,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.only(right: 16.0),
                   ),
                   child: ListTile(
-                    title: Text(todo.task),
+                    title: Text(
+                      todo.task,
+                      style: TextStyle(
+                        decoration: todo.isCompleted
+                            ? TextDecoration.lineThrough
+                            : TextDecoration.none,
+                      ),
+                    ),
                     trailing: Checkbox(
                       value: todo.isCompleted,
                       onChanged: (bool? value) {
