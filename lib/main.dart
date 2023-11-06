@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app_sqlite_freezed/pages/editTask.dart';
 import 'models/todo_model.dart';
 import 'models/database_helper.dart';
 import 'pages/addTask.dart';
@@ -89,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text('${todo.task} supprimée'),
+                        duration: Duration(seconds: 1),
                       ),
                     );
                   },
@@ -109,6 +111,25 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                     ),
+                    onLongPress: () {
+                      Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EditTask(todo: todo)))
+                          .then((updatedTask) {
+                        if (updatedTask != null && updatedTask is String) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Tâche mise à jour : $updatedTask'),
+                              duration: Duration(seconds: 1),
+                            ),
+                          );
+                          setState(() {
+                            _todos = DatabaseHelper.instance.getAllTodos();
+                          });
+                        }
+                      });
+                    },
                   ),
                 );
               },
